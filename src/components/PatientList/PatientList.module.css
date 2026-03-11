@@ -1,0 +1,33 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.listItem {
+  opacity: 0;
+  animation: cardIn 0.45s var(--ease-out) forwards;
+  scroll-snap-align: start;
+  scroll-margin-top: 0;
+}
+
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85% {
+    transform: translateY(-3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

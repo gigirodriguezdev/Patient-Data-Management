@@ -1,0 +1,34 @@
+.image,
+.placeholder {
+  border-radius: var(--radius-full);
+  display: block;
+}
+
+.sizeMd.image,
+.sizeMd.placeholder {
+  width: 4rem;
+  height: 4rem;
+}
+
+.sizeLg.image,
+.sizeLg.placeholder {
+  width: 5rem;
+  height: 5rem;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.placeholder {
+  background-color: var(--color-bg-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.placeholderIcon {
+  flex-shrink: 0;
+  opacity: 0.8;
+}

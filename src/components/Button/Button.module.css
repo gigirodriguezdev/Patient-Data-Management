@@ -1,0 +1,122 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-fast) var(--ease-out),
+    border-color var(--transition-fast) var(--ease-out),
+    transform var(--transition-fast) var(--ease-out),
+    box-shadow var(--transition-fast) var(--ease-out);
+}
+
+.root:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  transform: var(--hover-lift);
+  box-shadow: var(--hover-shadow);
+}
+
+.secondary {
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.secondary:hover:not(:disabled) {
+  background-color: var(--color-border);
+  transform: var(--hover-lift);
+  box-shadow: var(--shadow-sm);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: var(--color-bg-muted);
+  transform: var(--hover-lift);
+}
+
+/* Minimal: text only; hover shows animated underline (L→R) */
+.minimal,
+.minimalMuted {
+  position: relative;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: var(--space-1) var(--space-2);
+  box-shadow: none;
+  transition: color 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
+}
+
+.minimal::after,
+.minimalMuted::after {
+  content: '';
+  position: absolute;
+  left: var(--space-2);
+  bottom: 0.15em;
+  height: 2px;
+  width: 0;
+  max-width: calc(100% - 2 * var(--space-2));
+  background-color: currentColor;
+  transition: width 0.4s var(--ease-out);
+}
+
+.minimal {
+  color: var(--color-primary);
+}
+
+.minimal:hover:not(:disabled) {
+  transform: scale(1.04);
+}
+
+.minimal:hover:not(:disabled)::after {
+  width: calc(100% - 2 * var(--space-2));
+}
+
+.minimalMuted {
+  color: var(--color-text-muted);
+}
+
+.minimalMuted:hover:not(:disabled) {
+  color: var(--color-text);
+  transform: scale(1.04);
+}
+
+.minimalMuted:hover:not(:disabled)::after {
+  width: calc(100% - 2 * var(--space-2));
+}
+
+.root.minimal:active:not(:disabled),
+.root.minimalMuted:active:not(:disabled) {
+  transform: scale(0.98);
+}

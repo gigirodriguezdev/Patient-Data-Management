@@ -1,0 +1,17 @@
+.root {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+.message {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}

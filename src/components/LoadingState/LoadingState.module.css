@@ -1,0 +1,74 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--space-8);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.iconWrap {
+  color: var(--color-primary);
+  animation: pulse 1.5s ease-in-out 2s infinite;
+}
+
+.ecg {
+  width: 12rem;
+  height: 3.6rem;
+}
+
+/* ECG line draws in; subtle pulse */
+.ecgPath {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  animation: drawEcg 1.8s var(--ease-out) forwards;
+}
+
+@keyframes drawEcg {
+  0% {
+    stroke-dashoffset: 520;
+    opacity: 1;
+  }
+  70% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.65;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--color-text);
+}
+
+.message {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

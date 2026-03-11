@@ -1,0 +1,30 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  color: var(--color-icon);
+  background: none;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: color 0.3s var(--ease-out),
+    transform 0.3s var(--ease-out);
+}
+
+.root:hover:not(:disabled) {
+  color: var(--color-icon-hover);
+  transform: var(--hover-lift);
+}
+
+.root:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.root:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

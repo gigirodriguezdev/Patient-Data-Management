@@ -1,0 +1,28 @@
+.emptyStateCta {
+  margin-top: var(--space-4);
+}
+
+.pageShell {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - (var(--space-4) * 2));
+  min-height: 0;
+}
+
+.pageHeader {
+  flex: 0 0 auto;
+}
+
+.listViewport {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-3);
+  overscroll-behavior: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.listViewport::-webkit-scrollbar {
+  display: none;
+}

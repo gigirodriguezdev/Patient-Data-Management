@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Patient Management">
+  <defs>
+    <style>
+      :root { --s: #0d9488; }
+    </style>
+  </defs>
+  <!-- Eartips -->
+  <circle cx="18" cy="12" r="4" fill="var(--s)"/>
+  <circle cx="46" cy="12" r="4" fill="var(--s)"/>
+  <!-- Tubes to chestpiece -->
+  <path d="M 22 14 C 10 18 8 32 26 36" fill="none" stroke="var(--s)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 42 14 C 54 18 56 32 38 36" fill="none" stroke="var(--s)" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Main tube -->
+  <path d="M 32 36 L 32 50" fill="none" stroke="var(--s)" stroke-width="4" stroke-linecap="round"/>
+  <!-- Chestpiece -->
+  <circle cx="32" cy="54" r="8" fill="none" stroke="var(--s)" stroke-width="3"/>
+  <circle cx="32" cy="54" r="3.5" fill="var(--s)"/>
+</svg>
+

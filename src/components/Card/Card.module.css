@@ -1,0 +1,15 @@
+.root {
+  background-color: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  border-radius: 0;
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-4);
+  transition: box-shadow 0.2s var(--ease-out), transform 0.15s var(--ease-out);
+}
+
+.root:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}

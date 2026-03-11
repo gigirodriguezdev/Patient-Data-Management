@@ -1,0 +1,48 @@
+/* Global styles — import tokens once, then base layout */
+@import './styles/tokens.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background: linear-gradient(
+      160deg,
+      #f0fdfa 0%,
+      #f8fafc 35%,
+      #e0f2fe 70%,
+      #f1f5f9 100%
+    )
+    fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Scroll snap for cards and header */
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-3);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+#root {
+  min-height: 100vh;
+}

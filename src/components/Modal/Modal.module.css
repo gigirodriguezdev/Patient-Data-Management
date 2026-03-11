@@ -1,0 +1,76 @@
+.root {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity var(--transition-normal) var(--ease-out);
+}
+
+.root[data-state='open'] .backdrop {
+  opacity: 1;
+}
+
+.root[data-state='closed'] .backdrop {
+  opacity: 0;
+}
+
+.dialog {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 32rem;
+  max-height: 90vh;
+  overflow: auto;
+  background-color: var(--color-bg);
+  border-radius: 0;
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-6);
+  opacity: 0;
+  transform: translateY(10px) scale(0.985);
+  transition: opacity var(--transition-normal) var(--ease-out),
+    transform var(--transition-normal) var(--ease-out);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+}
+
+.dialog::-webkit-scrollbar {
+  display: none;
+}
+
+.root[data-state='open'] .dialog {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.root[data-state='closed'] .dialog {
+  opacity: 0;
+  transform: translateY(10px) scale(0.985);
+}
+
+.closeButton {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  color: var(--color-text-muted);
+  background: none;
+}
+
+.closeButton:hover {
+  color: var(--color-text);
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
